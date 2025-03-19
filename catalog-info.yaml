@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: nww2pcysf-go-gitops
+  description: This is GitOps manifest for nww2pcysf-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=nww2pcysf-go
+    backstage.io/kubernetes-id: nww2pcysf-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: nww2pcysf-go   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:nww2pcysf-go
